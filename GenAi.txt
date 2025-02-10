@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fact Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #3e8e41;
+        }
+
+        #factDisplay {
+            margin-top: 20px;
+            font-size: 18px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fact Generator</h1>
+        <button onclick="generateFact()">Generate Fact</button>
+        <p id="factDisplay"></p>
+    </div>
+
+    <script>
+        const facts = [
+            "The Eiffel Tower can be 15 cm taller during the summer, due to thermal expansion.",
+            "A bolt of lightning contains enough energy to toast 100,000 slices of bread.",
+            "The average person walks the equivalent of five times around the world in their lifetime.",
+            "Bananas are berries, but strawberries aren't.",
+            "Honey never spoils."
+        ];
+
+        function generateFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const fact = facts[randomIndex];
+            document.getElementById("factDisplay").textContent = fact;
+        }
+    </script>
+</body>
+</html>
